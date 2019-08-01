@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+.effect {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.effect #lottie {
+  width: 100vw;
+  position: absolute;
+  bottom: -200px;
+}
+
+.bricks-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.bricks-container .bricks {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.bricks-container .bricks .brick {
+  width: 10%;
+  height: 5vh;
+  background-color: black;
+  -webkit-animation: fall 1s linear forwards;
+          animation: fall 1s linear forwards;
+}
+
+@-webkit-keyframes fall {
+  100% {
+    -webkit-transform: translateY(110vh) rotate(360deg);
+            transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes fall {
+  100% {
+    -webkit-transform: translateY(110vh) rotate(360deg);
+            transform: translateY(110vh) rotate(360deg);
+  }
+}

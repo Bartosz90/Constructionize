@@ -1,0 +1,44 @@
+=flexCenter()
+    display: flex 
+    justify-content: center 
+    align-self: center 
+    flex-wrap: wrap
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+body 
+    overflow-x: hidden
+    background-color: #000
+
+.effect 
+    position: relative
+    width: 100vw 
+    height: 100vh
+    overflow: hidden
+    background-color: black
+    +flexCenter()
+    align-items: flex-end
+    #lottie 
+        width: 100vw
+        position: absolute
+        bottom: -200px
+
+.bricks-container 
+    width: 100vw
+    height: 100vh
+    background-color: white
+    overflow: hidden
+    +flexCenter()
+    .bricks 
+        width: 50%
+        height: 100%
+        +flexCenter()
+        .brick
+            width: 10%
+            height: 5vh
+            background-color: black
+            animation: fall 1s linear forwards
+            @keyframes fall 
+                100% 
+                    transform: translateY(110vh) rotate(360deg) 
