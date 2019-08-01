@@ -30,15 +30,12 @@ body
     background-color: white
     overflow: hidden
     +flexCenter()
-    .bricks 
-        width: 50%
-        height: 100%
-        +flexCenter()
-        .brick
-            width: 10%
-            height: 5vh
-            background-color: black
-            animation: fall 1s linear forwards
-            @keyframes fall 
-                100% 
-                    transform: translateY(110vh) rotate(360deg) 
+    .brick
+        width: 5%
+        height: 5vh
+        background-color: #000
+        transition: .3s linear
+        // animation: fall 1s linear forwards
+        @keyframes fall 
+            100% 
+                transform: translateY(110vh) rotate(360deg) 
