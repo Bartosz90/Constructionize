@@ -37,6 +37,67 @@ body {
   bottom: -200px;
 }
 
+.hammer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 50px;
+  z-index: 5;
+  background-color: transparent;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+}
+
+.hammer.animate {
+  -webkit-animation: hit .5s ease;
+          animation: hit .5s ease;
+}
+
+@-webkit-keyframes hit {
+  90% {
+    -webkit-transform: translate(-50%, -50%) rotate(-120deg);
+            transform: translate(-50%, -50%) rotate(-120deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes hit {
+  90% {
+    -webkit-transform: translate(-50%, -50%) rotate(-120deg);
+            transform: translate(-50%, -50%) rotate(-120deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.hammer.animateFall {
+  -webkit-animation: hit .5s ease forwards;
+          animation: hit .5s ease forwards;
+}
+
+@keyframes hit {
+  80% {
+    -webkit-transform: translate(-50%, -50%) rotate(-120deg);
+            transform: translate(-50%, -50%) rotate(-120deg);
+  }
+  90% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 110vh) rotate(90deg);
+            transform: translate(-50%, 110vh) rotate(90deg);
+  }
+}
+
 .bricks-container {
   width: 100vw;
   height: 100vh;
@@ -58,8 +119,8 @@ body {
   width: 5%;
   height: 5vh;
   background-color: #000;
-  -webkit-transition: .3s linear;
-  transition: .3s linear;
+  -webkit-transition: .1s linear;
+  transition: .1s linear;
 }
 
 @-webkit-keyframes fall {

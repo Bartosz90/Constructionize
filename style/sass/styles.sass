@@ -24,6 +24,35 @@ body
         position: absolute
         bottom: -200px
 
+.hammer 
+    position: fixed 
+    top: 50% 
+    left: 50% 
+    transform: translate(-50%,-50%)
+    color: #fff
+    font-size: 50px
+    z-index: 5
+    background-color: transparent
+    transform-origin: left bottom
+
+
+.hammer.animate 
+    animation: hit .5s ease 
+    @keyframes hit 
+        90%
+            transform: translate(-50%,-50%) rotate(-120deg)
+        100% 
+            transform: translate(-50%,-50%)
+    
+.hammer.animateFall
+    animation: hit .5s ease forwards
+    @keyframes hit 
+        80%
+            transform: translate(-50%,-50%) rotate(-120deg)
+        90% 
+            transform: translate(-50%,-50%)
+        100%
+            transform: translate(-50%,110vh) rotate(90deg)
 .bricks-container 
     width: 100vw
     height: 100vh
@@ -34,8 +63,9 @@ body
         width: 5%
         height: 5vh
         background-color: #000
-        transition: .3s linear
-        // animation: fall 1s linear forwards
+        transition: .1s linear
         @keyframes fall 
             100% 
                 transform: translateY(110vh) rotate(360deg) 
+    .brick:nth-child(191)
+        // border-bottom: 1px solid white
