@@ -1,0 +1,86 @@
+.about 
+    position: relative
+    +flexCenter()
+    background-color: $base-dark
+    padding: 20px
+    overflow: hidden
+    .left, .right 
+        position: absolute
+        top: 0
+        width: 50%
+        height: 100vh 
+        overflow: hidden  
+    .left 
+        left: 0
+        background-color: $border-red
+    .right 
+        right: 0
+        background-color: $light-red
+    .left::after, .right::after 
+        width: 250px 
+        height: 250px 
+        position: absolute 
+        content: ""
+        background-color: $base-dark
+        border-radius: 50%
+        top: 50% 
+        transform: translateY(-50%)
+        box-sizing: border-box
+        border: 4px solid $base-dark
+    .left::after 
+        right: -125px
+        background-color: $light-red  
+    .right::after 
+        left: -125px
+        background-color: $border-red
+    .orb 
+        position: absolute 
+        width: 250px 
+        height: 250px
+        left: 50% 
+        top: 50% 
+        opacity: 1
+        transform: translate(-50%,-50%)
+        background-color: #fff
+        border-radius: 50%
+        border: 4px solid $base-dark
+        overflow: hidden
+        +flexCenter()
+        flex-wrap: nowrap
+        &::after, &::before 
+            content: ""
+            width: 125px 
+            height: 300px
+        &::after 
+            background-color: $light-red
+        &::before
+            background-color: $border-red
+    p 
+        text-align: center
+        
+.about.active
+    .orb
+        animation: rotate 1s forwards 
+        @keyframes rotate 
+            99% 
+                opacity: 1 
+                transform: translate(-50%,-50%) rotate(180deg)
+            100% 
+                opacity: 0
+                visibility: hidden
+    .left 
+        animation: slideLeft 1s forwards 1.1s
+        @keyframes slideLeft 
+            100%
+                transform: translateX(-110%)
+    .right 
+        animation: slideRight 1s forwards 1.1s
+        @keyframes slideRight
+            100%
+                transform: translateX(110%)
+
+                
+
+
+    
+

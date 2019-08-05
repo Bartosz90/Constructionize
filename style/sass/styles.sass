@@ -92,18 +92,19 @@ body
         height: 10vh
         background-color: $light-red
         transition: .1s linear
-        border: 1px solid #fff
         z-index: 5
         @keyframes fall 
             100% 
                 transform: translateY(110vh) rotate(360deg) 
 
-.header 
-    +flexCenter()
+
 .main-section 
     width: 100vw 
     height: 100vh
-.about, .contact
+    padding: 20px
+.offer
     background-color: $light-red
 
 @import 'nav'
+@import 'header'
+@import 'about'
