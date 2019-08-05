@@ -1,8 +1,47 @@
 .header
+    position: relative
+    padding: 40px
     +flexCenter()
     align-content: center
+    overflow: hidden
     h1 
         height: 100px
         +flexCenter()
-    p 
+    h1, p 
         text-align: center
+    p 
+        margin-top: 30px
+    .vehicle
+        position: absolute
+        width: 80px
+        height: 80px
+        bottom: 0
+        right: -100px
+        animation: ride 5s linear infinite 
+        img 
+            width: 100%
+        @keyframes ride 
+            10% 
+                transform: none
+            90% 
+                transform: translateX(-140vw)
+            100% 
+                transform: translateX(-140vw)
+        &::after, &::before 
+            position: absolute 
+            opacity: 1
+            content: ""
+            top: 35px
+            right: -12px
+            width: 10px
+            height: 10px 
+            border-radius: 50% 
+            background-color: gray
+            animation: smoke .6s infinite
+            
+            @keyframes smoke 
+                100% 
+                    opacity: 0
+                    transform:  translate(150%,-150%) scale(2)
+        &::after 
+            animation-delay: .3s

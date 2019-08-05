@@ -11,6 +11,7 @@ window.load = createBricks();
 const bricks = document.querySelectorAll(" .brick");
 const hammer = document.querySelector(".hammer");
 const bricksContainer = document.querySelector(".bricks-container");
+const wallAdvice = document.querySelector(".wallAdvice");
 let hitCounter = 0;
 let animationDone = false;
 
@@ -50,6 +51,8 @@ const destroy = () => {
     }
   } else {
     hammer.classList.add("animateFall");
+    wallAdvice.style.opacity = "0";
+    wallAdvice.style.visibility = "hidden";
     bricks.forEach((brick, index) => {
       if (
         index !== 11 &&
@@ -79,6 +82,7 @@ const timer = setInterval(() => {
     setTimeout(() => {
       bricksContainer.remove();
       hammer.remove();
+      wallAdvice.remove();
       clearInterval(timer);
     }, 4000);
   }
@@ -102,6 +106,16 @@ $("nav a").on("click", function(e) {
   });
 });
 
+//header vehicle animation image change
+
+vehicleImg = document.querySelector(".vehicle img");
+
+window.load = setInterval(() => {
+  console.log("elo");
+  vehicleImg.src = `img/png/${Math.floor(Math.random() * (10 - 1 + 1)) +
+    1}.png`;
+}, 5000);
+
 //about section animation
 
 window.addEventListener("scroll", () => {
@@ -110,7 +124,7 @@ window.addEventListener("scroll", () => {
   const about = document.querySelector(".about");
   const aboutFromTop = about.offsetTop;
   const aboutHeight = about.offsetHeight;
-  if (scroll > aboutFromTop + aboutHeight - windowHeight - 5) {
+  if (scroll > aboutFromTop + aboutHeight - windowHeight - 30) {
     about.classList.add("active");
   }
   if (scroll < 100) {

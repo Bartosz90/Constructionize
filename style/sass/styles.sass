@@ -42,22 +42,7 @@ body
     z-index: 6
     background-color: transparent
     transform-origin: left bottom
-    animation: shake 3s linear infinite
     cursor: pointer
-    @keyframes shake 
-        1% 
-            transform: translate(-50%,-50%) rotate(-12deg)
-        2% 
-            transform: translate(-50%,-50%) rotate(12deg)
-        3% 
-            transform: translate(-50%,-50%) rotate(-12deg)
-        4% 
-            transform: translate(-50%,-50%) rotate(12deg)
-        5% 
-            transform: translate(-50%,-50%)
-        100% 
-            transform: translate(-50%,-50%) 
-
 .hammer.animate 
     animation: hit .2s ease 
     @keyframes hit 
@@ -96,8 +81,14 @@ body
         @keyframes fall 
             100% 
                 transform: translateY(110vh) rotate(360deg) 
-
-
+.wallAdvice
+    position: fixed
+    bottom: 0
+    width: 100vw
+    padding: 10px
+    text-align: center
+    font-size: 15px
+    z-index: 9
 .main-section 
     width: 100vw 
     height: 100vh
