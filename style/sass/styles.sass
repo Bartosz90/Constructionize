@@ -1,15 +1,16 @@
 =flexCenter()
     display: flex 
     justify-content: center 
-    align-self: center 
+    align-items: center 
     flex-wrap: wrap
 *
     margin: 0
     padding: 0
     box-sizing: border-box
+    -webkit-tap-highlight-color: transparent
 body 
     overflow-x: hidden
-    background-color: #000
+
 
 .effect 
     position: relative
@@ -29,12 +30,26 @@ body
     top: 50% 
     left: 50% 
     transform: translate(-50%,-50%)
-    color: #fff
+    color: red
     font-size: 50px
     z-index: 5
     background-color: transparent
     transform-origin: left bottom
-
+    animation: shake 3s linear infinite
+    cursor: pointer
+    @keyframes shake 
+        1% 
+            transform: translate(-50%,-50%) rotate(-12deg)
+        2% 
+            transform: translate(-50%,-50%) rotate(12deg)
+        3% 
+            transform: translate(-50%,-50%) rotate(-12deg)
+        4% 
+            transform: translate(-50%,-50%) rotate(12deg)
+        5% 
+            transform: translate(-50%,-50%)
+        100% 
+            transform: translate(-50%,-50%) 
 
 .hammer.animate 
     animation: hit .5s ease 
@@ -42,30 +57,38 @@ body
         90%
             transform: translate(-50%,-50%) rotate(-120deg)
         100% 
-            transform: translate(-50%,-50%)
-    
+            transform: translate(-50%,-50%)  
 .hammer.animateFall
-    animation: hit .5s ease forwards
-    @keyframes hit 
-        80%
+    animation: hitFall 2s ease forwards
+    @keyframes hitFall 
+        20%
             transform: translate(-50%,-50%) rotate(-120deg)
-        90% 
+        25% 
+            transform: translate(-50%,-50%)
+        30% 
             transform: translate(-50%,-50%)
         100%
-            transform: translate(-50%,110vh) rotate(90deg)
+            transform: translate(-50%,110vh) rotate(360deg)
 .bricks-container 
+    position: fixed 
+    top: 0
+    left: 0
     width: 100vw
     height: 100vh
-    background-color: white
+    background-color: transparent
     overflow: hidden
     +flexCenter()
     .brick
-        width: 5%
-        height: 5vh
+        position: relative
+        width: 10%
+        height: 10vh
         background-color: #000
         transition: .1s linear
         @keyframes fall 
             100% 
                 transform: translateY(110vh) rotate(360deg) 
-    .brick:nth-child(191)
-        // border-bottom: 1px solid white
+
+.header 
+    width: 100vw
+    height: 100vh
+    +flexCenter()
