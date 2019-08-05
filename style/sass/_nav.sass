@@ -1,0 +1,69 @@
+.nav
+    position: fixed 
+    top: 0
+    left: 0
+    width: 150px 
+    height: 100vh   
+    background-color: transparent
+    transform: translateX(-160px)
+    +flexCenter()
+    align-content: center
+    .hamburger 
+        position: fixed 
+        top: 10px 
+        left: 170px 
+        width: 40px 
+        height: 30px
+        background-color: transparent
+        border: none
+        overflow: hidden
+        +flexCenter()
+        flex-direction: column
+        justify-content: space-around
+        outline: none
+        .bar 
+            height: 4px 
+            width: 30px
+            background-color: $border-red
+            transition: .5s 
+        .fas 
+            position: absolute 
+            top: 50% 
+            left: 50% 
+            transform: translate(-50%,-50%) scale(0)
+            font-size: 35px    
+            transition: .5s 
+            color: $border-red
+    .nav-btn 
+        display: block
+        width: 150px 
+        height: 50px
+        background-color: $light-red
+        border: 4px solid $border-red
+        margin: 10px 0
+        border-radius: 6px
+        color: #fff
+        transform: none
+        transition: .3s
+        text-decoration: none
+        +flexCenter()
+        @media (min-width: 420px)
+            margin: 5px 0
+    .nav-btn-about
+        transition-delay: .1s
+    .nav-btn-offer
+        transition-delay: .2s
+    .nav-btn-contact
+        transition-delay: .3s
+
+.nav.active 
+    .hamburger
+        .bar 
+            transform: translateX(50px)
+        .bar2 
+            transform: translateX(-50px)
+        .fas 
+            transform: translate(-50%,-50%) scale(1)
+.nav.active .nav-btn 
+    transform: translateX(150px)
+

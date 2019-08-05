@@ -1,27 +1,8 @@
-// const effect = document.querySelector(".effect");
-// lottie.loadAnimation({
-//   container: document.getElementById("lottie"),
-//   renderer: "svg",
-//   loop: true,
-//   autoplay: true,
-//   path: "https://assets4.lottiefiles.com/datafiles/0Be3ZyAz36H7Mmk/data.json"
-// });
-// const createBricks = () => {
-//   for (let i = 0; i < 50; i++) {
-//     const brick = document.createElement("div");
-//     brick.className = `brick brick-${i}`;
-//     [...document.querySelectorAll(".bricks")].forEach(container => {
-//       container.appendChild(brick);
-//     });
-//   }
-// };
-// window.load = createBricks();
-
 function createBricks() {
   for (let i = 0; i < 100; i++) {
     const brick = document.createElement("div");
     brick.className = "brick";
-    brick.style.transitionDelay = `.5s`;
+    brick.style.transitionDelay = `.2s`;
     document.querySelector(".bricks-container").appendChild(brick);
   }
 }
@@ -41,35 +22,51 @@ const destroy = () => {
     }, 1000);
 
     if (hitCounter === 0) {
-      [...bricks][45].style.animation = `fall 2.5s linear .5s forwards`;
+      [...bricks][45].style.animation = `fall 2.5s linear .2s forwards`;
       [...bricks][45].style.border = `1px solid #fff`;
+      [...bricks][45].style.zIndex = `9`;
       hitCounter++;
     } else if (hitCounter === 1) {
       [...bricks][81].style.animation = `fall 2.5s linear .5s forwards`;
       [...bricks][81].style.border = `1px solid #fff`;
+      [...bricks][81].style.zIndex = `9`;
       [...bricks][63].style.animation = `fall 2.5s linear .9s forwards`;
       [...bricks][63].style.border = `1px solid #fff`;
+      [...bricks][63].style.zIndex = `9`;
       [...bricks][11].style.animation = `fall 2.5s linear .6s forwards`;
       [...bricks][11].style.border = `1px solid #fff`;
+      [...bricks][11].style.zIndex = `9`;
       [...bricks][37].style.animation = `fall 2.5s linear .7s forwards`;
       [...bricks][37].style.border = `1px solid #fff`;
-      for (let i = 0; i < 20; i++) {
+      [...bricks][37].style.zIndex = `9`;
+      for (let i = 0; i < 30; i++) {
         bricks[
-          Math.floor(Math.random() * (80 - 20 + 1)) + 20
-        ].style.borderBottom = "1px solid white";
-        bricks[
-          Math.floor(Math.random() * (80 - 20 + 1)) + 20
-        ].style.borderRight = "1px solid white";
+          Math.floor(Math.random() * (99 - 0 + 1)) + 0
+        ].style.borderBottom = "3px solid white";
+        bricks[Math.floor(Math.random() * (99 - 0 + 1)) + 0].style.borderRight =
+          "3px solid white";
       }
       hitCounter++;
     }
   } else {
     hammer.classList.add("animateFall");
-    bricks.forEach(brick => {
-      brick.style.animation = `fall 1s linear ${(
-        Math.random() * (2.2 - 0.5 + 1) +
-        0.5
-      ).toFixed(1)}s forwards`;
+    bricks.forEach((brick, index) => {
+      if (
+        index !== 11 &&
+        index !== 37 &&
+        index !== 45 &&
+        index !== 63 &&
+        index !== 81
+      ) {
+        brick.style.animation = `fall .7s linear ${(
+          Math.random() * (1.8 - 0.2 + 1) +
+          0.2
+        ).toFixed(1)}s forwards`;
+        brick.style.zIndex = "9";
+        setTimeout(() => {
+          bricksContainer.style.zIndex = "-1";
+        }, 3000);
+      }
     });
     animationDone = true;
   }
@@ -86,3 +83,21 @@ const timer = setInterval(() => {
     }, 4000);
   }
 }, 10000);
+
+// handle NAV
+
+const nav = document.querySelector(".nav");
+const menuBtns = document.querySelectorAll(".menu");
+
+menuBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+});
+
+$("nav a").on("click", function(e) {
+  const goToSection = `.${e.target.dataset.target}`;
+  $("body, html").animate({
+    scrollTop: $(goToSection).offset().top
+  });
+});

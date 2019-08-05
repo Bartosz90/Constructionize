@@ -8,6 +8,9 @@
 
 body {
   overflow-x: hidden;
+  background-color: #1a1a1d;
+  font-family: 'Muli', sans-serif;
+  color: #fff;
 }
 
 .effect {
@@ -44,9 +47,9 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: red;
+  color: #fff;
   font-size: 50px;
-  z-index: 5;
+  z-index: 6;
   background-color: transparent;
   -webkit-transform-origin: left bottom;
           transform-origin: left bottom;
@@ -110,8 +113,8 @@ body {
 }
 
 .hammer.animate {
-  -webkit-animation: hit .5s ease;
-          animation: hit .5s ease;
+  -webkit-animation: hit .2s ease;
+          animation: hit .2s ease;
 }
 
 @-webkit-keyframes hit {
@@ -137,8 +140,8 @@ body {
 }
 
 .hammer.animateFall {
-  -webkit-animation: hitFall 2s ease forwards;
-          animation: hitFall 2s ease forwards;
+  -webkit-animation: hitFall 1s ease forwards;
+          animation: hitFall 1s ease forwards;
 }
 
 @-webkit-keyframes hitFall {
@@ -187,6 +190,7 @@ body {
   height: 100vh;
   background-color: transparent;
   overflow: hidden;
+  z-index: 4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,9 +208,11 @@ body {
   position: relative;
   width: 10%;
   height: 10vh;
-  background-color: #000;
+  background-color: #C7493A;
   -webkit-transition: .1s linear;
   transition: .1s linear;
+  border: 1px solid #fff;
+  z-index: 5;
 }
 
 @-webkit-keyframes fall {
@@ -224,8 +230,6 @@ body {
 }
 
 .header {
-  width: 100vw;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -237,4 +241,154 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.main-section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.about, .contact {
+  background-color: #C7493A;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100vh;
+  background-color: transparent;
+  -webkit-transform: translateX(-160px);
+          transform: translateX(-160px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.nav .hamburger {
+  position: fixed;
+  top: 10px;
+  left: 170px;
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  outline: none;
+}
+
+.nav .hamburger .bar {
+  height: 4px;
+  width: 30px;
+  background-color: #A33327;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.nav .hamburger .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  font-size: 35px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  color: #A33327;
+}
+
+.nav .nav-btn {
+  display: block;
+  width: 150px;
+  height: 50px;
+  background-color: #C7493A;
+  border: 4px solid #A33327;
+  margin: 10px 0;
+  border-radius: 6px;
+  color: #fff;
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 420px) {
+  .nav .nav-btn {
+    margin: 5px 0;
+  }
+}
+
+.nav .nav-btn-about {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+
+.nav .nav-btn-offer {
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+.nav .nav-btn-contact {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.nav.active .hamburger .bar {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+.nav.active .hamburger .bar2 {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.nav.active .hamburger .fas {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.nav.active .nav-btn {
+  -webkit-transform: translateX(150px);
+          transform: translateX(150px);
 }

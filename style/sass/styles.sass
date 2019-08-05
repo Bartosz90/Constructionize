@@ -3,14 +3,21 @@
     justify-content: center 
     align-items: center 
     flex-wrap: wrap
+
+$base-dark: #1a1a1d
+$border-red: #A33327
+$light-red: #C7493A
 *
     margin: 0
     padding: 0
     box-sizing: border-box
     -webkit-tap-highlight-color: transparent
+    
 body 
     overflow-x: hidden
-
+    background-color: $base-dark
+    font-family: 'Muli', sans-serif
+    color: #fff
 
 .effect 
     position: relative
@@ -30,9 +37,9 @@ body
     top: 50% 
     left: 50% 
     transform: translate(-50%,-50%)
-    color: red
+    color: #fff
     font-size: 50px
-    z-index: 5
+    z-index: 6
     background-color: transparent
     transform-origin: left bottom
     animation: shake 3s linear infinite
@@ -52,14 +59,14 @@ body
             transform: translate(-50%,-50%) 
 
 .hammer.animate 
-    animation: hit .5s ease 
+    animation: hit .2s ease 
     @keyframes hit 
         90%
             transform: translate(-50%,-50%) rotate(-120deg)
         100% 
             transform: translate(-50%,-50%)  
 .hammer.animateFall
-    animation: hitFall 2s ease forwards
+    animation: hitFall 1s ease forwards
     @keyframes hitFall 
         20%
             transform: translate(-50%,-50%) rotate(-120deg)
@@ -77,18 +84,26 @@ body
     height: 100vh
     background-color: transparent
     overflow: hidden
+    z-index: 4
     +flexCenter()
     .brick
         position: relative
         width: 10%
         height: 10vh
-        background-color: #000
+        background-color: $light-red
         transition: .1s linear
+        border: 1px solid #fff
+        z-index: 5
         @keyframes fall 
             100% 
                 transform: translateY(110vh) rotate(360deg) 
 
 .header 
-    width: 100vw
-    height: 100vh
     +flexCenter()
+.main-section 
+    width: 100vw 
+    height: 100vh
+.about, .contact
+    background-color: $light-red
+
+@import 'nav'

@@ -6,6 +6,10 @@
 
     <title>Hammer</title>
     <script src="https://kit.fontawesome.com/b8b3239479.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style/css/styles.css" />
   </head>
 
@@ -15,10 +19,41 @@
     </div>
     <section class="bricks-container"></section>
 
-    <header class="header">
+    <nav class="nav">
+      <button class="hamburger menu" data-target="hamburger">
+        <i class="fas fa-times"></i>
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
+      <a href="#" data-target="header" class="nav-btn menu nav-btn-head"
+        >Home</a
+      >
+      <a href="#" data-target="about" class="nav-btn menu nav-btn-about"
+        >About</a
+      >
+      <a href="#" data-target="offer" class="nav-btn menu nav-btn-offer"
+        >Offert</a
+      >
+      <a href="#" data-target="contact" class="nav-btn menu nav-btn-contact"
+        >Contact</a
+      >
+    </nav>
+
+    <header class="header main-section">
       <h1>Welcome!</h1>
     </header>
 
+    <section class="about main-section"><h1>About</h1></section>
+
+    <section class="offer main-section"><h1>Offer</h1></section>
+
+    <section class="contact main-section"><h1>Contact</h1></section>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <script src="scripts/script.js"></script>
   </body>
 </html>
