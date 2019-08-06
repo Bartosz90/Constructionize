@@ -20,7 +20,7 @@ const destroy = () => {
     hammer.classList.add("animate");
     setTimeout(() => {
       hammer.classList.remove("animate");
-    }, 1000);
+    }, 300);
 
     if (hitCounter === 0) {
       [...bricks][45].style.animation = `fall 1s linear .2s forwards`;
@@ -75,7 +75,7 @@ const destroy = () => {
   }
 };
 
-document.querySelector(".hammer").addEventListener("click", destroy);
+window.addEventListener("click", destroy);
 
 const timer = setInterval(() => {
   if (animationDone) {
@@ -124,7 +124,7 @@ window.addEventListener("scroll", () => {
   const about = document.querySelector(".about");
   const aboutFromTop = about.offsetTop;
   const aboutHeight = about.offsetHeight;
-  if (scroll > aboutFromTop + aboutHeight - windowHeight - 50) {
+  if (scroll > aboutFromTop + aboutHeight - windowHeight - 70) {
     about.classList.add("active");
   }
   if (scroll < 100) {
