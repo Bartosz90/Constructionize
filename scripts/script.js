@@ -124,7 +124,7 @@ window.addEventListener("scroll", () => {
   const about = document.querySelector(".about");
   const aboutFromTop = about.offsetTop;
   const aboutHeight = about.offsetHeight;
-  if (scroll > aboutFromTop + aboutHeight - windowHeight - 30) {
+  if (scroll > aboutFromTop + aboutHeight - windowHeight - 50) {
     about.classList.add("active");
   }
   if (scroll < 100) {
