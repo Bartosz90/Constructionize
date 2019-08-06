@@ -1,0 +1,72 @@
+.offer 
+    padding: 20px 0
+    +flexCenter()
+    justify-content: space-around
+    h2 
+        text-align: center
+        padding: 0 50px
+    .building 
+        position: relative
+        width: 34%
+        padding: 10px 0
+        +flexCenter()
+        border-radius: 8px
+        border: 4px solid $border-red
+        transform: scale(0)
+        transition: .2s ease-in-out  
+        background-color: $base-dark 
+        img 
+            width: 60%
+        &::after
+            position: absolute
+            content: ""
+            left: 50%
+            font-size: 12px
+            opacity: 0
+            visibility: hidden
+            transition: .3s
+            width: 100%
+            height: 30px
+            bottom: -50px
+            +flexCenter()
+            transform: translateX(-50%)
+            background-color: $base-dark
+            border: 4px solid $border-red
+            border-radius: 8px
+    .building:hover 
+        &::after
+            transform: translate(-50%,-46px)
+            visibility: visible
+            opacity: 1
+    .building:nth-of-type(1)::after
+        content: "Dog huts"
+    .building:nth-of-type(2)::after
+        content: "Electric poles"
+    .building:nth-of-type(3)::after
+        content: "Factories"
+    .building:nth-of-type(4)::after
+        content: "Hospitals"
+    .building:nth-of-type(5)::after
+        content: "Houses"
+    .building:nth-of-type(6)::after
+        content: "Nuclear plants"
+    .building:nth-of-type(7)::after
+        content: "Sky scrappers"
+    .building:nth-of-type(8)::after
+        content: "Pumpjacks"
+        
+.offer.active 
+    .building 
+        transform: scale(1)
+
+// .building:hover &::after, &::before
+//     visibility: visible
+//     opacity: 1
+// .building:hover &::after
+//     transform: translate(-50%,100%)
+//     visibility: visible
+//     opacity: 1
+// .building:hover &::before
+//     // transform: translate(-50%,100%) rotate(45deg)
+//     visibility: visible
+//     opacity: 1

@@ -120,7 +120,7 @@ window.load = setInterval(() => {
   }, 5100);
 }, 5200);
 
-//about section animation
+//sections on scroll animations
 
 window.addEventListener("scroll", () => {
   const scroll = window.scrollY;
@@ -128,10 +128,53 @@ window.addEventListener("scroll", () => {
   const about = document.querySelector(".about");
   const aboutFromTop = about.offsetTop;
   const aboutHeight = about.offsetHeight;
+  const offer = document.querySelector(".offer");
+  const offerFromTop = offer.offsetTop;
+  const offerHeight = offer.offsetHeight;
   if (scroll > aboutFromTop + aboutHeight - windowHeight - 70) {
     about.classList.add("active");
   }
+  if (scroll > offerFromTop + offerHeight - windowHeight - 70) {
+    offer.classList.add("active");
+  }
   if (scroll < 100) {
     about.classList.remove("active");
+    offer.classList.remove("active");
   }
 });
+
+//add different transition delay for each building image
+
+let delay;
+const addDelay = () => {
+  document.querySelectorAll(".building").forEach((building, index) => {
+    switch (index) {
+      case 0:
+        delay = 0;
+        break;
+      case 1:
+        delay = 0.4;
+        break;
+      case 2:
+        delay = 0.5;
+        break;
+      case 3:
+        delay = 0.1;
+        break;
+      case 4:
+        delay = 0.2;
+        break;
+      case 5:
+        delay = 0.6;
+        break;
+      case 6:
+        delay = 0.7;
+        break;
+      case 7:
+        delay = 0.3;
+        break;
+    }
+    building.style.transitionDelay = `${delay}s`;
+  });
+};
+window.load = addDelay();
