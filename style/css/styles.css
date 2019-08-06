@@ -172,7 +172,7 @@ body {
   }
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .bricks-container .brick {
     cursor: pointer;
   }
@@ -264,7 +264,7 @@ body {
   }
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .nav .hamburger {
     cursor: pointer;
     width: 40px;
@@ -293,7 +293,7 @@ body {
   }
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .nav .hamburger .bar {
     height: 4px;
     width: 30px;
@@ -351,7 +351,7 @@ body {
   }
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1300px) {
   .nav .nav-btn:hover {
     letter-spacing: 2px;
   }
@@ -479,14 +479,9 @@ body {
   }
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .header p {
     width: 60%;
-  }
-}
-
-@media (min-width: 1366px) and (min-height: 760px) {
-  .header p {
     margin-bottom: 150px;
   }
 }
@@ -512,7 +507,7 @@ body {
   right: -100px;
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .header .vehicle {
     width: 120px;
     height: 120px;
@@ -760,7 +755,7 @@ body {
   text-align: center;
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .about h2, .about p {
     width: 70%;
   }
@@ -816,7 +811,7 @@ body {
   }
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .about .advantage {
     width: 52%;
   }
@@ -834,7 +829,7 @@ body {
           transform: translateX(-150%);
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .about .advantage-1, .about .advantage-3 {
     -webkit-transform: translateX(-200%);
             transform: translateX(-200%);
@@ -846,7 +841,7 @@ body {
           transform: translateX(150%);
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .about .advantage-2 {
     -webkit-transform: translateX(200%);
             transform: translateX(200%);
@@ -995,7 +990,7 @@ body {
       justify-content: space-around;
 }
 
-@media (min-width: 1366px) and (min-height: 760px) {
+@media (min-width: 1300px) and (min-height: 700px) {
   .offer {
     padding: 20px 150px;
   }
@@ -1101,7 +1096,7 @@ body {
   border-radius: 8px;
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1300px) {
   .offer .building::after {
     height: 50px;
     font-size: 20px;
