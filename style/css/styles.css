@@ -638,6 +638,12 @@ body {
   }
 }
 
+@media (min-width: 1400px) {
+  .about {
+    padding: 60px 400px;
+  }
+}
+
 .about .left, .about .right {
   position: absolute;
   top: 0;
@@ -769,6 +775,12 @@ body {
   }
 }
 
+@media (min-width: 1400px) {
+  .about h2 {
+    font-size: 30px;
+  }
+}
+
 .about h2, .about p {
   text-align: center;
 }
@@ -812,6 +824,12 @@ body {
 @media (min-width: 1200px) and (min-height: 500px) {
   .about p {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about p {
+    font-size: 24px;
   }
 }
 
@@ -860,6 +878,13 @@ body {
   }
 }
 
+@media (min-width: 1400px) {
+  .about .advantage-1, .about .advantage-3 {
+    -webkit-transform: translateX(-300%);
+            transform: translateX(-300%);
+  }
+}
+
 .about .advantage-2 {
   -webkit-transform: translateX(150%);
           transform: translateX(150%);
@@ -869,6 +894,13 @@ body {
   .about .advantage-2 {
     -webkit-transform: translateX(200%);
             transform: translateX(200%);
+  }
+}
+
+@media (min-width: 1400px) {
+  .about .advantage-2 {
+    -webkit-transform: translateX(300%);
+            transform: translateX(300%);
   }
 }
 
@@ -1022,7 +1054,7 @@ body {
 
 @media (min-width: 1400px) {
   .offer {
-    padding: 20px 250px;
+    padding: 20px 350px;
   }
 }
 
