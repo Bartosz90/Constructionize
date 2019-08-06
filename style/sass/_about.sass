@@ -5,6 +5,14 @@ $transition: .8s cubic-bezier(0.68, -0.55, 0.27, 1.55)
     background-color: $base-dark
     padding: 20px
     overflow: hidden
+    @media (orientation: portrait) and (min-width: 360px)
+        padding: 60px 20px
+    @media (orientation: portrait) and (min-height: 800px)
+        padding: 150px 20px
+    @media (orientation: landscape) and (min-width: 500px)
+        padding: 20px 60px
+    @media (min-width: 1000px) and (min-height: 1000px)
+        padding: 60px 20px
     .left, .right 
         position: absolute
         top: 0
@@ -66,18 +74,54 @@ $transition: .8s cubic-bezier(0.68, -0.55, 0.27, 1.55)
             width: 84px
     h2 
         font-size: 20px
+        @media (min-width: 500px)
+            font-size: 14px
+        @media (min-width: 600px)
+            font-size: 16px
+        @media (min-width: 720px)
+            font-size: 18px
+        @media (min-width: 750px) and (min-height: 750px)
+            font-size: 35px
+        
     h2, p 
         text-align: center
+        @media (min-width: 1366px) and (min-height: 760px)
+            width: 70%
+        @media (min-width: 1000px) and (min-height: 1000px)
+            width: 55%
+    p 
+        @media (orientation: landscape) and (min-width: 500px)
+            font-size: 12px
+        @media (orientation: landscape) and (min-width: 600px)
+            font-size: 14px
+        @media (orientation: landscape) and (min-width: 720px)
+            font-size: 16px
+        @media (min-width: 750px) and (min-height: 750px)
+            font-size: 25px
+        
     .advantage 
         width: 70%
         padding: 10px
         border: 4px solid $border-red
         border-radius: 8px
         text-transform: uppercase
+        @media (orientation: landscape) and (min-width: 500px)
+            padding: 5px
+        @media (orientation: landscape) and (min-width: 720px)
+            padding: 10px
+        @media (min-width: 1366px) and (min-height: 760px)
+            width: 52%
+        @media (min-width: 1000px) and (min-height: 1000px)
+            padding: 20px
+            width: 52%
     .advantage-1, .advantage-3
-        transform: translateX(-140%)
+        transform: translateX(-150%)
+        @media (min-width: 1366px) and (min-height: 760px)
+            transform: translateX(-200%)
     .advantage-2
-        transform: translateX(140%)
+        transform: translateX(150%)
+        @media (min-width: 1366px) and (min-height: 760px)
+            transform: translateX(200%)
 .about.active
     .orb
         animation: rotate 1s forwards 

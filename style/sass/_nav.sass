@@ -9,6 +9,9 @@
     +flexCenter()
     align-content: center
     z-index: 3
+    @media (min-width: 1400px)
+        width: 250px
+        transform: translateX(-260px)
     .hamburger 
         position: fixed 
         top: 10px 
@@ -22,11 +25,26 @@
         flex-direction: column
         justify-content: space-around
         outline: none
+        @media (min-width: 750px) and (min-height: 750px)
+            width: 60px
+            height: 40px
+        @media (min-width: 1366px) and (min-height: 760px)
+            cursor: pointer
+            width: 40px 
+            height: 30px
+        @media (min-width: 1400px)
+            left: 270px
         .bar 
             height: 4px 
             width: 30px
             background-color: $border-red
             transition: .5s 
+            @media (min-width: 750px) and (min-height: 750px)
+                height: 5px
+                width: 50px
+            @media (min-width: 1366px) and (min-height: 760px)
+                height: 4px 
+                width: 30px
         .fas 
             position: absolute 
             top: 50% 
@@ -35,6 +53,8 @@
             font-size: 35px    
             transition: .5s 
             color: $border-red
+            @media (min-width: 750px) and (min-height: 750px)
+                font-size: 45px
     .nav-btn 
         display: block
         width: 150px 
@@ -48,9 +68,16 @@
         transition: .3s
         text-decoration: none
         +flexCenter()
-        
         @media (min-width: 420px)
             margin: 5px 0
+        @media (min-width: 1366px)
+            &:hover 
+                letter-spacing: 2px
+        @media (min-width: 1400px)
+            width: 250px
+            height: 60px
+            font-size: 20px
+            margin: 10px 0
     .nav-btn-about
         transition-delay: .1s
     .nav-btn-offer
@@ -61,11 +88,13 @@
 .nav.active 
     .hamburger
         .bar 
-            transform: translateX(50px)
+            transform: translateX(60px)
         .bar2 
-            transform: translateX(-50px)
+            transform: translateX(-60px)
         .fas 
             transform: translate(-50%,-50%) scale(1)
 .nav.active .nav-btn 
     transform: translateX(150px)
+    @media (min-width: 1400px)
+        transform: translateX(240px)
 

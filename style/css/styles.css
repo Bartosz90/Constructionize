@@ -172,6 +172,12 @@ body {
   }
 }
 
+@media (min-width: 1366px) and (min-height: 760px) {
+  .bricks-container .brick {
+    cursor: pointer;
+  }
+}
+
 .wallAdvice {
   position: fixed;
   bottom: 0;
@@ -186,6 +192,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 .nav {
@@ -211,6 +218,14 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   z-index: 3;
+}
+
+@media (min-width: 1400px) {
+  .nav {
+    width: 250px;
+    -webkit-transform: translateX(-260px);
+            transform: translateX(-260px);
+  }
 }
 
 .nav .hamburger {
@@ -242,12 +257,47 @@ body {
   outline: none;
 }
 
+@media (min-width: 750px) and (min-height: 750px) {
+  .nav .hamburger {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .nav .hamburger {
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .nav .hamburger {
+    left: 270px;
+  }
+}
+
 .nav .hamburger .bar {
   height: 4px;
   width: 30px;
   background-color: #A33327;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+@media (min-width: 750px) and (min-height: 750px) {
+  .nav .hamburger .bar {
+    height: 5px;
+    width: 50px;
+  }
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .nav .hamburger .bar {
+    height: 4px;
+    width: 30px;
+  }
 }
 
 .nav .hamburger .fas {
@@ -260,6 +310,12 @@ body {
   -webkit-transition: .5s;
   transition: .5s;
   color: #A33327;
+}
+
+@media (min-width: 750px) and (min-height: 750px) {
+  .nav .hamburger .fas {
+    font-size: 45px;
+  }
 }
 
 .nav .nav-btn {
@@ -295,6 +351,21 @@ body {
   }
 }
 
+@media (min-width: 1366px) {
+  .nav .nav-btn:hover {
+    letter-spacing: 2px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .nav .nav-btn {
+    width: 250px;
+    height: 60px;
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+
 .nav .nav-btn-about {
   -webkit-transition-delay: .1s;
           transition-delay: .1s;
@@ -311,13 +382,13 @@ body {
 }
 
 .nav.active .hamburger .bar {
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
 }
 
 .nav.active .hamburger .bar2 {
-  -webkit-transform: translateX(-50px);
-          transform: translateX(-50px);
+  -webkit-transform: translateX(-60px);
+          transform: translateX(-60px);
 }
 
 .nav.active .hamburger .fas {
@@ -328,6 +399,13 @@ body {
 .nav.active .nav-btn {
   -webkit-transform: translateX(150px);
           transform: translateX(150px);
+}
+
+@media (min-width: 1400px) {
+  .nav.active .nav-btn {
+    -webkit-transform: translateX(240px);
+            transform: translateX(240px);
+  }
 }
 
 .header {
@@ -348,7 +426,6 @@ body {
 }
 
 .header h1 {
-  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -362,6 +439,31 @@ body {
       flex-wrap: wrap;
 }
 
+@media (orientation: portrait) and (min-width: 350px) {
+  .header h1 {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 750px) and (min-height: 750px) {
+  .header h1 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 1000px) {
+  .header h1 {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .header h1 {
+    width: 100%;
+    font-size: 70PX;
+  }
+}
+
 .header h1, .header p {
   text-align: center;
 }
@@ -371,12 +473,57 @@ body {
   font-size: 20px;
 }
 
+@media (min-width: 750px) and (min-height: 750px) {
+  .header p {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .header p {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .header p {
+    margin-bottom: 150px;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 1000px) {
+  .header p {
+    width: 60%;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .header p {
+    margin-bottom: 300px;
+  }
+}
+
 .header .vehicle {
   position: absolute;
   width: 90px;
   height: 90px;
   bottom: 45px;
   right: -100px;
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .header .vehicle {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .header .vehicle {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .header .vehicle img {
@@ -458,6 +605,30 @@ body {
   background-color: #1a1a1d;
   padding: 20px;
   overflow: hidden;
+}
+
+@media (orientation: portrait) and (min-width: 360px) {
+  .about {
+    padding: 60px 20px;
+  }
+}
+
+@media (orientation: portrait) and (min-height: 800px) {
+  .about {
+    padding: 150px 20px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 500px) {
+  .about {
+    padding: 20px 60px;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 1000px) {
+  .about {
+    padding: 60px 20px;
+  }
 }
 
 .about .left, .about .right {
@@ -561,8 +732,68 @@ body {
   font-size: 20px;
 }
 
+@media (min-width: 500px) {
+  .about h2 {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 600px) {
+  .about h2 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 720px) {
+  .about h2 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 750px) and (min-height: 750px) {
+  .about h2 {
+    font-size: 35px;
+  }
+}
+
 .about h2, .about p {
   text-align: center;
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .about h2, .about p {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 1000px) {
+  .about h2, .about p {
+    width: 55%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 500px) {
+  .about p {
+    font-size: 12px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 600px) {
+  .about p {
+    font-size: 14px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 720px) {
+  .about p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 750px) and (min-height: 750px) {
+  .about p {
+    font-size: 25px;
+  }
 }
 
 .about .advantage {
@@ -573,14 +804,53 @@ body {
   text-transform: uppercase;
 }
 
+@media (orientation: landscape) and (min-width: 500px) {
+  .about .advantage {
+    padding: 5px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 720px) {
+  .about .advantage {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .about .advantage {
+    width: 52%;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 1000px) {
+  .about .advantage {
+    padding: 20px;
+    width: 52%;
+  }
+}
+
 .about .advantage-1, .about .advantage-3 {
-  -webkit-transform: translateX(-140%);
-          transform: translateX(-140%);
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .about .advantage-1, .about .advantage-3 {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+  }
 }
 
 .about .advantage-2 {
-  -webkit-transform: translateX(140%);
-          transform: translateX(140%);
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+}
+
+@media (min-width: 1366px) and (min-height: 760px) {
+  .about .advantage-2 {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
 }
 
 .about.active .orb {
@@ -725,9 +995,46 @@ body {
       justify-content: space-around;
 }
 
+@media (min-width: 1366px) and (min-height: 760px) {
+  .offer {
+    padding: 20px 150px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .offer {
+    padding: 20px 250px;
+  }
+}
+
 .offer h2 {
   text-align: center;
   padding: 0 50px;
+}
+
+@media (orientation: landscape) and (min-width: 600px) {
+  .offer h2 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 750px) and (min-height: 750px) {
+  .offer h2 {
+    width: 100%;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 1000px) {
+  .offer h2 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .offer h2 {
+    font-size: 50px;
+  }
 }
 
 .offer .building {
@@ -752,6 +1059,12 @@ body {
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
   background-color: #1a1a1d;
+}
+
+@media (orientation: landscape) and (min-width: 500px) {
+  .offer .building {
+    width: 21%;
+  }
 }
 
 .offer .building img {
@@ -786,6 +1099,13 @@ body {
   background-color: #1a1a1d;
   border: 4px solid #A33327;
   border-radius: 8px;
+}
+
+@media (min-width: 1366px) {
+  .offer .building::after {
+    height: 50px;
+    font-size: 20px;
+  }
 }
 
 .offer .building:hover::after {
