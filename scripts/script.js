@@ -9,25 +9,25 @@ function createBricks() {
 window.load = createBricks();
 
 const bricks = document.querySelectorAll(" .brick");
-const hammer = document.querySelector(".hammer");
 const bricksContainer = document.querySelector(".bricks-container");
 const wallAdvice = document.querySelector(".wallAdvice");
+wallAdvice.textContent = `${
+  window.innerWidth < 900 ? "Tap" : "Click"
+} to destroy the wall!`;
 let hitCounter = 0;
 let animationDone = false;
 
-const destroy = () => {
+const destroy = e => {
   if (hitCounter < 2) {
-    hammer.classList.add("animate");
-    setTimeout(() => {
-      hammer.classList.remove("animate");
-    }, 300);
-
     if (hitCounter === 0) {
-      [...bricks][45].style.animation = `fall 1s linear .2s forwards`;
-      [...bricks][45].style.border = `3px solid #fff`;
-      [...bricks][45].style.zIndex = `9`;
+      e.target.style.animation = `fall 1.5s linear .1s forwards`;
+      e.target.style.border = `3px solid #fff`;
+      e.target.style.zIndex = `9`;
       hitCounter++;
     } else if (hitCounter === 1) {
+      e.target.style.animation = `fall 1.5s linear .1s forwards`;
+      e.target.style.border = `3px solid #fff`;
+      e.target.style.zIndex = `9`;
       [...bricks][81].style.animation = `fall .7s linear .3s forwards`;
       [...bricks][81].style.border = `3px solid #fff`;
       [...bricks][81].style.zIndex = `9`;
@@ -50,17 +50,13 @@ const destroy = () => {
       hitCounter++;
     }
   } else {
-    hammer.classList.add("animateFall");
+    e.target.style.animation = `fall 1.5s linear .1s forwards`;
+    e.target.style.border = `3px solid #fff`;
+    e.target.style.zIndex = `9`;
     wallAdvice.style.opacity = "0";
     wallAdvice.style.visibility = "hidden";
     bricks.forEach((brick, index) => {
-      if (
-        index !== 11 &&
-        index !== 37 &&
-        index !== 45 &&
-        index !== 63 &&
-        index !== 81
-      ) {
+      if (index !== 11 && index !== 37 && index !== 63 && index !== 81) {
         brick.style.animation = `fall .7s linear ${(
           Math.random() * (1.2 - 0.2 + 1) +
           0.2
@@ -75,13 +71,14 @@ const destroy = () => {
   }
 };
 
-window.addEventListener("click", destroy);
+bricks.forEach(brick => {
+  brick.addEventListener("click", destroy);
+});
 
 const timer = setInterval(() => {
   if (animationDone) {
     setTimeout(() => {
       bricksContainer.remove();
-      hammer.remove();
       wallAdvice.remove();
       clearInterval(timer);
     }, 4000);
