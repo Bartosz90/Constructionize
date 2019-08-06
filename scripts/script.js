@@ -108,13 +108,17 @@ $("nav a").on("click", function(e) {
 
 //header vehicle animation image change
 
-vehicleImg = document.querySelector(".vehicle img");
+const vehicle = document.querySelector(".vehicle");
+const vehicleImg = document.querySelector(".vehicle img");
 
 window.load = setInterval(() => {
-  console.log("elo");
   vehicleImg.src = `img/png/${Math.floor(Math.random() * (10 - 1 + 1)) +
     1}.png`;
-}, 5000);
+  vehicle.style.animation = "ride 5s linear forwards";
+  setTimeout(() => {
+    vehicle.style.animation = "none";
+  }, 5100);
+}, 5200);
 
 //about section animation
 

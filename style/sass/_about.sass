@@ -1,3 +1,4 @@
+$transition: .8s cubic-bezier(0.68, -0.55, 0.27, 1.55)
 .about 
     position: relative
     +flexCenter()
@@ -63,9 +64,20 @@
         .orb-small 
             height: 84px 
             width: 84px
-    p 
+    h2 
+        font-size: 20px
+    h2, p 
         text-align: center
-        
+    .advantage 
+        width: 70%
+        padding: 10px
+        border: 4px solid $border-red
+        border-radius: 8px
+        text-transform: uppercase
+    .advantage-1, .advantage-3
+        transform: translateX(-140%)
+    .advantage-2
+        transform: translateX(140%)
 .about.active
     .orb
         animation: rotate 1s forwards 
@@ -95,6 +107,16 @@
         @keyframes slideRight
             100%
                 transform: translateX(110%)
+    .advantage-1,  .advantage-2, .advantage-3
+        animation: showUp 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)forwards  1.5s
+        @keyframes showUp 
+            100%
+                transform: none
+    .advantage-2
+        animation-delay: 1.7s
+    .advantage-3
+        animation-delay: 1.9s
+
 
                 
 

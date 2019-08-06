@@ -16,16 +16,13 @@
         position: absolute
         width: 80px
         height: 80px
-        bottom: 20px
+        bottom: 45px
         right: -100px
-        animation: ride 5s linear infinite 
         img 
             width: 100%
+            position: absolute 
+            bottom: 0
         @keyframes ride 
-            10% 
-                transform: none
-            90% 
-                transform: translateX(-140vw)
             100% 
                 transform: translateX(-140vw)
         &::after, &::before 
@@ -46,3 +43,9 @@
                     transform:  translate(150%,-150%) scale(2)
         &::after 
             animation-delay: .3s
+    .road 
+        position: absolute
+        bottom: 50px
+        width: 100vw
+        height: 4px 
+        background-color: gray
