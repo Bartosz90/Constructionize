@@ -1,3 +1,5 @@
+//Entry animation - creates div 'wall' with 100 destructible bricks. After 3 hits wall falls apart and div is removed from DOM.
+
 function createBricks() {
   for (let i = 0; i < 100; i++) {
     const brick = document.createElement("div");
@@ -103,6 +105,19 @@ $("nav a").on("click", function(e) {
   });
 });
 
+const closeMenu = () => {
+  if (nav.classList.contains("active")) {
+    nav.classList.remove("active");
+  }
+};
+
+//close menu on header/section click
+
+document.querySelectorAll("section").forEach(section => {
+  section.addEventListener("click", closeMenu);
+});
+document.querySelector("header").addEventListener("click", closeMenu);
+
 //header vehicle animation image change
 
 const vehicle = document.querySelector(".vehicle");
@@ -142,11 +157,7 @@ window.addEventListener("scroll", () => {
   }
   if (scroll < 100) {
     about.classList.remove("active");
-  }
-  if (scroll < 250) {
     offer.classList.remove("active");
-  }
-  if (scroll < 500) {
     contact.classList.remove("active");
   }
 });
