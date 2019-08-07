@@ -198,7 +198,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 20px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .nav {
@@ -1213,10 +1213,81 @@ body {
   position: relative;
   padding: 0;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.contact .address-train {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 950px;
+  height: 50px;
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.contact .address-train::after, .contact .address-train::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  left: 22px;
+  top: -12px;
+  -webkit-animation: smoke .5s infinite;
+          animation: smoke .5s infinite;
+}
+
+@keyframes smoke {
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(160%, -200%) scale(2);
+            transform: translate(160%, -200%) scale(2);
+  }
+}
+
+.contact .address-train::before {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.contact .address-train h3 {
+  margin: 0 10px;
+  padding: 3px;
+  border-top: 4px solid #626266;
+  border-bottom: 4px solid #626266;
 }
 
 .contact .ceiling {
   position: absolute;
+  top: 0;
   width: 100vw;
   height: 10px;
   background-color: #000;
@@ -1224,7 +1295,7 @@ body {
 
 .contact .map {
   position: absolute;
-  top: 45%;
+  top: 30%;
   left: 50%;
   -webkit-transform: translateX(-50%) rotate(-10deg);
           transform: translateX(-50%) rotate(-10deg);
@@ -1233,10 +1304,21 @@ body {
   margin-bottom: 20px;
   border: 8px solid #626266;
   border-radius: 8px;
-  -webkit-animation: hang 5s ease-in-out infinite;
-          animation: hang 5s ease-in-out infinite;
-  -webkit-transform-origin: 40% -50%;
-          transform-origin: 40% -50%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transform-origin: 40% -20%;
+          transform-origin: 40% -20%;
+}
+
+@media (orientation: landscape) and (min-width: 510px) {
+  .contact .map {
+    left: 49%;
+    top: 36%;
+    -webkit-transform-origin: 53% -42%;
+            transform-origin: 53% -42%;
+    width: 45%;
+    height: 40%;
+  }
 }
 
 .contact .map iframe {
@@ -1247,13 +1329,41 @@ body {
   position: absolute;
   content: "";
   left: 50%;
-  top: -40%;
+  top: -18%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  height: 39%;
+  height: 18%;
   width: 5px;
   background-color: #626266;
   border-radius: 8px;
+}
+
+@media (orientation: landscape) and (min-width: 510px) {
+  .contact .map::after {
+    height: 43%;
+    top: -43%;
+  }
+}
+
+.contact .hook {
+  position: absolute;
+  height: 25%;
+  top: 0;
+  left: 54%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (orientation: landscape) and (min-width: 510px) {
+  .contact .hook {
+    height: 25%;
+    left: 50%;
+  }
+}
+
+.contact.active .map {
+  -webkit-animation: hang 5s ease-in-out infinite;
+          animation: hang 5s ease-in-out infinite;
 }
 
 @-webkit-keyframes hang {
@@ -1278,11 +1388,21 @@ body {
   }
 }
 
-.contact .hook {
-  position: absolute;
-  height: 30%;
-  top: 0;
-  left: 54%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+.contact.active .address-train {
+  -webkit-animation: train 6s linear infinite;
+          animation: train 6s linear infinite;
+}
+
+@-webkit-keyframes train {
+  100% {
+    -webkit-transform: translateX(-930px);
+            transform: translateX(-930px);
+  }
+}
+
+@keyframes train {
+  100% {
+    -webkit-transform: translateX(-930px);
+            transform: translateX(-930px);
+  }
 }

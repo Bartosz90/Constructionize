@@ -2,14 +2,49 @@
     position: relative
     padding: 0
     overflow: hidden
+    +flexCenter()
+    justify-content: flex-start
+    .address-train
+        position: absolute 
+        bottom: 0
+        left: 0
+        width: 950px
+        height: 50px
+        transform: translateX(100vw)
+        +flexCenter()
+        flex-wrap: nowrap
+        
+        &::after, &::before
+            position: absolute 
+            content: ""
+            width: 10px
+            height: 10px 
+            border-radius: 50% 
+            background-color: gray
+            left: 22px
+            top: -12px
+            animation: smoke .5s infinite 
+            @keyframes smoke 
+                100% 
+                    opacity: 0
+                    transform: translate(160%,-200%) scale(2)
+        &::before
+            animation-delay: .2s
+
+        h3 
+            margin: 0 10px
+            padding: 3px
+            border-top: 4px solid #626266
+            border-bottom: 4px solid #626266
     .ceiling
         position: absolute 
+        top: 0
         width: 100vw 
         height: 10px 
         background-color: #000
     .map
         position: absolute
-        top: 45%
+        top: 30%
         left: 50%
         transform: translateX(-50%) rotate(-10deg)
         width: 60%
@@ -17,32 +52,64 @@
         margin-bottom: 20px
         border: 8px solid #626266
         border-radius: 8px
+        filter: grayscale(100%)
+        transform-origin: 40% -20%
+        @media (orientation: landscape) and (min-width: 510px)
+            left: 49%
+            top: 36%
+            transform-origin: 53% -42%
+            width: 45%
+            height: 40%
         iframe 
             border-radius: 4px
         &::after 
             position: absolute
             content: ""
             left: 50%
-            top: -40%
+            top: -18%
             transform: translateX(-50%) 
-            height: 39%
+            height: 18%
             width: 5px
             background-color: #626266
             border-radius: 8px
-        animation: hang 5s ease-in-out infinite 
-        transform-origin: 40% -50%
+            @media (orientation: landscape) and (min-width: 510px)
+                height: 43%
+                top: -43%
+        // animation: hang 5s ease-in-out infinite 
+        // transform-origin: 40% -20%
+        // @media (orientation: landscape) and (min-width: 510px)
+        //     left: 49%
+        //     top: 36%
+        //     transform-origin: 53% -42%
+        //     width: 45%
+        //     height: 40%
+        
+            
+    .hook 
+        position: absolute
+        height: 25%
+        top: 0
+        left: 54%
+        transform: translateX(-50%)  
+        @media (orientation: landscape) and (min-width: 510px)
+            height: 25% 
+            left: 50%
+.contact.active 
+    .map
+        animation: hang 5s ease-in-out infinite
         @keyframes hang 
             50% 
                 transform: translateX(-50%) rotate(10deg)
             100%
                 transform: translateX(-50%) rotate(-10deg)
-            
-    .hook 
-        position: absolute
-        height: 30%
-        top: 0
-        left: 54%
-        transform: translateX(-50%)   
+    .address-train
+        animation: train 6s linear infinite 
+        @keyframes train
+            100%
+                transform: translateX(-930px)
+    
+
+
         
 
         

@@ -128,15 +128,26 @@ window.addEventListener("scroll", () => {
   const offer = document.querySelector(".offer");
   const offerFromTop = offer.offsetTop;
   const offerHeight = offer.offsetHeight;
+  const contact = document.querySelector(".contact");
+  const contactFromTop = contact.offsetTop;
+  const contactHeight = contact.offsetHeight;
   if (scroll > aboutFromTop + aboutHeight - windowHeight - 70) {
     about.classList.add("active");
   }
-  if (scroll > offerFromTop + offerHeight - windowHeight - 70) {
+  if (scroll > offerFromTop + offerHeight - windowHeight - 100) {
     offer.classList.add("active");
+  }
+  if (scroll > contactFromTop + contactHeight - windowHeight - 300) {
+    contact.classList.add("active");
   }
   if (scroll < 100) {
     about.classList.remove("active");
+  }
+  if (scroll < 250) {
     offer.classList.remove("active");
+  }
+  if (scroll < 500) {
+    contact.classList.remove("active");
   }
 });
 
