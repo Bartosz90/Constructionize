@@ -50,9 +50,6 @@ const destroy = e => {
       hitCounter++;
     }
   } else {
-    e.target.style.animation = `fall 1.5s linear .1s forwards`;
-    e.target.style.border = `3px solid #fff`;
-    e.target.style.zIndex = `9`;
     wallAdvice.style.opacity = "0";
     wallAdvice.style.visibility = "hidden";
     bricks.forEach((brick, index) => {
@@ -64,8 +61,11 @@ const destroy = e => {
         brick.style.zIndex = "9";
         setTimeout(() => {
           bricksContainer.style.zIndex = "-1";
-        }, 3000);
+        }, 2000);
       }
+      e.target.style.animation = `fall 1.5s linear .1s forwards`;
+      e.target.style.border = `3px solid #fff`;
+      e.target.style.zIndex = `9`;
     });
     animationDone = true;
   }

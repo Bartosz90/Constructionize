@@ -1,2 +1,43 @@
 .contact
-    +flexCenter()
+    position: relative
+    padding: 0
+    overflow: hidden
+    .map
+        position: absolute
+        top: 45%
+        left: 50%
+        transform: translateX(-50%) rotate(-10deg)
+        width: 60%
+        height: 45% 
+        margin-bottom: 20px
+        border: 4px solid $border-red
+        border-radius: 8px
+        iframe 
+            border-radius: 4px
+        &::after 
+            position: absolute
+            content: ""
+            left: 50%
+            top: -40%
+            transform: translateX(-50%) 
+            height: 39%
+            width: 5px
+            background-color: gray 
+            border-radius: 8px
+        animation: hang 5s linear infinite 
+        transform-origin: 40% -50%
+        @keyframes hang 
+            50% 
+                transform: translateX(-50%) rotate(10deg)
+            100%
+                transform: translateX(-50%) rotate(-10deg)
+            
+    .hook 
+        position: absolute
+        height: 30%
+        top: 0
+        left: 54%
+        transform: translateX(-50%)   
+        
+
+        
