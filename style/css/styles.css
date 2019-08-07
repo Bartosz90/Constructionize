@@ -1215,6 +1215,13 @@ body {
   overflow: hidden;
 }
 
+.contact .ceiling {
+  position: absolute;
+  width: 100vw;
+  height: 10px;
+  background-color: #000;
+}
+
 .contact .map {
   position: absolute;
   top: 45%;

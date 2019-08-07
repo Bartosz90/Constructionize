@@ -61,7 +61,7 @@ const destroy = e => {
         brick.style.zIndex = "9";
         setTimeout(() => {
           bricksContainer.style.zIndex = "-1";
-        }, 2000);
+        }, 2500);
       }
       e.target.style.animation = `fall 1.5s linear .1s forwards`;
       e.target.style.border = `3px solid #fff`;
