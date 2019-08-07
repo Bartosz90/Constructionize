@@ -1224,7 +1224,7 @@ body {
   width: 60%;
   height: 45%;
   margin-bottom: 20px;
-  border: 4px solid #A33327;
+  border: 8px solid #626266;
   border-radius: 8px;
   -webkit-animation: hang 5s linear infinite;
           animation: hang 5s linear infinite;
@@ -1245,7 +1245,7 @@ body {
           transform: translateX(-50%);
   height: 39%;
   width: 5px;
-  background-color: gray;
+  background-color: #626266;
   border-radius: 8px;
 }
 
