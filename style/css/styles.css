@@ -1233,8 +1233,8 @@ body {
   margin-bottom: 20px;
   border: 8px solid #626266;
   border-radius: 8px;
-  -webkit-animation: hang 5s linear infinite;
-          animation: hang 5s linear infinite;
+  -webkit-animation: hang 5s ease-in-out infinite;
+          animation: hang 5s ease-in-out infinite;
   -webkit-transform-origin: 40% -50%;
           transform-origin: 40% -50%;
 }
