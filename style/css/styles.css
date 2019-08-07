@@ -1252,6 +1252,12 @@ body {
       flex-wrap: nowrap;
 }
 
+@media (orientation: landscape) and (min-width: 1200px) {
+  .contact .address-train {
+    height: 100px;
+  }
+}
+
 .contact .address-train::after, .contact .address-train::before {
   position: absolute;
   content: "";
@@ -1321,6 +1327,12 @@ body {
             transform-origin: 53% -20%;
     width: 45%;
     height: 40%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1200px) {
+  .contact .map {
+    width: 30%;
   }
 }
 
