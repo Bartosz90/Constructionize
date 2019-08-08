@@ -1,5 +1,5 @@
 # Constructionize Inc.
 
-https://bartosz90.github.io/animation-practice/
+Live: https://bartosz90.github.io/Constructionize/
 
 Website made with JS, JQuery, Sass, HTML.
