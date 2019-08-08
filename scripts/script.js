@@ -135,27 +135,29 @@ window.load = setInterval(() => {
 //sections on scroll animations
 
 window.addEventListener("scroll", () => {
-  const scroll = window.scrollY;
-  const windowHeight = window.innerHeight;
   const about = document.querySelector(".about");
-  const aboutFromTop = about.offsetTop;
-  const aboutHeight = about.offsetHeight;
   const offer = document.querySelector(".offer");
-  const offerFromTop = offer.offsetTop;
-  const offerHeight = offer.offsetHeight;
   const contact = document.querySelector(".contact");
-  const contactFromTop = contact.offsetTop;
-  const contactHeight = contact.offsetHeight;
-  if (scroll > aboutFromTop + aboutHeight - windowHeight - 70) {
+
+  if (
+    window.scrollY >
+    about.offsetTop + about.offsetHeight - window.innerHeight - 70
+  ) {
     about.classList.add("active");
   }
-  if (scroll > offerFromTop + offerHeight - windowHeight - 100) {
+  if (
+    window.scrollY >
+    offer.offsetTop + offer.offsetHeight - window.innerHeight - 100
+  ) {
     offer.classList.add("active");
   }
-  if (scroll > contactFromTop + contactHeight - windowHeight - 300) {
+  if (
+    window.scrollY >
+    contact.offsetTop + contact.offsetHeight - window.innerHeight - 400
+  ) {
     contact.classList.add("active");
   }
-  if (scroll < 100) {
+  if (window.scrollY < 100) {
     about.classList.remove("active");
     offer.classList.remove("active");
     contact.classList.remove("active");
